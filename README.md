@@ -2,13 +2,13 @@
 
 ## Overview
 
-This repository contains the reproducible Python implementation for an unsupervised-machine-learning case study based on the **OSMI Mental Health in Tech Survey 2016**.
+This repository contains the reproducible Python implementation for an unsupervised machine learning case study based on the **OSMI Mental Health in Tech Survey 2016**.
 
-The analysis investigates whether survey respondents can be grouped into interpretable profiles relevant to mental-health stigma, disclosure, work impact and workplace support.
+The analysis investigates whether survey respondents can be grouped into interpretable profiles relevant to mental-health stigma, disclosure, work impact, and workplace support.
 
 The project deliberately separates:
 
-- **Primary respondent segmentation** — mental-health experience, stigma, disclosure and work impact.
+- **Primary respondent segmentation** — mental-health experience, stigma, disclosure, and work impact.
 - **Secondary workplace-support segmentation** — current workplace-support conditions among non-self-employed respondents.
 
 The analysis is descriptive. It is **not a clinical diagnostic system** and does not make causal claims.
