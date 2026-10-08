@@ -4,24 +4,23 @@
 
 The analysis investigates whether the OSMI Mental Health in Tech Survey 2016 contains interpretable respondent groupings that can support organizational mental-health and workplace-support decision-making.
 
-The analysis deliberately distinguishes between:
-
-1. a **primary respondent segmentation**, based on mental-health experience, disclosure, stigma and work-related impact; and
-2. a **secondary workplace-support segmentation**, restricted to respondents for whom current-employer questions are applicable.
-
-The purpose is not clinical diagnosis or prediction. Clusters are descriptive analytical segments.
+The analysis deliberately distinguishes between a **primary respondent segmentation** based on mental-health experience, disclosure, stigma and work-related impact, and a **secondary workplace-support segmentation** restricted to respondents for whom current-employer questions are applicable. The purpose is not clinical diagnosis or prediction.
 
 ## 2. Data preparation
 
-The source survey contains 1,433 respondents and 63 original variables.
+The source survey contains 1,433 respondents and 63 original variables. Categorical survey responses are represented using one-hot encoding. Missing categorical responses are retained as an explicit `Missing/Not reported` category.
 
-Categorical survey responses are represented using one-hot encoding. Missing categorical responses are retained as an explicit `Missing/Not reported` category rather than silently discarded.
+Age is treated numerically. Values outside the plausibility range of 18–80 are treated as missing, median-imputed, and standardized. The categorical one-hot features remain binary; the full 58-feature matrix is therefore **not** globally standardized.
 
-Age is treated numerically. Values outside the plausibility range of 18–80 are treated as missing, median-imputed, and standardized.
+Free-text responses, gender, geography and raw multi-response work-position strings are not used as baseline clustering inputs.
 
-Free-text responses, gender, geography, and raw multi-response work-position strings are not used as baseline clustering inputs. This reduces the risk that high-cardinality text or demographic/geographic structure dominates the unsupervised representation.
+## 3. Routing stress test
 
-## 3. Primary representation
+A broad preliminary representation was evaluated specifically to identify whether survey-routing variables dominated the unsupervised structure. The resulting K=2 solution separated **1,146 non-self-employed respondents from 287 self-employed respondents**, closely reproducing the survey's employment-routing structure. This was treated as a methodological red flag rather than as the substantive target segmentation.
+
+Employer-routing variables were consequently excluded from the primary universal representation.
+
+## 4. Primary representation
 
 The primary representation contains 15 survey variables covering:
 
@@ -39,88 +38,48 @@ The primary representation contains 15 survey variables covering:
 - work interference when not treated effectively;
 - remote work.
 
-Employer-routing variables that could create structural missingness are excluded from the primary representation.
-
 The resulting matrix contains 1,433 respondents and 58 encoded features.
 
-## 4. Clustering methods
-
-Three unsupervised approaches are considered:
+## 5. Clustering methods
 
 ### K-Means
 
-K-Means is evaluated for K=2 through K=8. Each K is fitted repeatedly using 10 random seeds with `n_init=50`.
-
-Stability is assessed using pairwise Adjusted Rand Index (ARI).
+K-Means is evaluated for K=2 through K=8. Each K is fitted across 10 random seeds using `n_init=50`. The final deterministic model uses `random_state=42`. Stability is assessed using pairwise Adjusted Rand Index (ARI).
 
 ### Gaussian Mixture Models
 
-Gaussian Mixture Models with diagonal covariance are evaluated for 2–6 components. AIC and BIC are considered alongside Silhouette Score and Davies–Bouldin Index.
+Gaussian Mixture Models with **diagonal covariance** are evaluated for 2–6 components. AIC and BIC are considered alongside Silhouette Score and Davies–Bouldin Index.
 
 ### Hierarchical clustering
 
-Ward hierarchical clustering is used as an independent cross-check. A PCA-20 representation is used for the Ward comparison to reduce dimensionality while retaining most of the structured variation.
+Ward hierarchical clustering is used as an independent cross-check for K=2–8 on a PCA-20 representation. Because Ward is evaluated on a different representation, it is treated as corroborative evidence rather than as a directly interchangeable primary model.
 
-## 5. Model evaluation
+## 6. Model evaluation
 
-Model selection does not rely on one metric.
+Model selection considers Silhouette Score, Davies–Bouldin Index, repeated-run ARI, cluster-size balance, independent-method agreement, substantive interpretability and organizational actionability.
 
-The analysis considers:
+For the primary representation, K=2 provides the strongest K-Means internal separation among the tested values and produces large, highly stable groups of 788 and 645 respondents. Its mean pairwise ARI across the 10-seed sweep is 0.9977.
 
-- Silhouette Score — higher is preferable;
-- Davies–Bouldin Index — lower is preferable;
-- repeated-run ARI — higher indicates greater stability;
-- cluster-size balance;
-- agreement with an independent clustering method;
-- substantive interpretability;
-- organizational actionability.
+## 7. PCA
 
-The primary K=2 solution provides the strongest internal separation among the tested K values, while also producing stable and reasonably sized groups.
+PCA is used diagnostically rather than as evidence that the data are inherently two-dimensional. For the primary representation, the first two components explain approximately 28.73% of total variance and the first 20 explain approximately 82.74%.
 
-The resulting primary clusters contain 788 and 645 respondents.
+## 8. Workplace-support analysis
 
-## 6. PCA
+The secondary analysis is restricted to 1,146 non-self-employed respondents. It focuses on current workplace support and stigma variables, including employer-provided mental-health benefits, awareness of available care, formal employer communication, educational resources, anonymity, medical leave, perceived disclosure consequences, coworker/supervisor comfort, employer seriousness toward mental health, and observed negative consequences.
 
-PCA is used as a diagnostic representation rather than as evidence that the data are inherently two-dimensional.
+Previous-employer-specific and routing variables are excluded. The substantive survey item asking about an unsupportive or badly handled response in a **current or previous workplace** is retained because it measures a support/stigma experience rather than determining survey routing.
 
-For the primary representation, the first two principal components explain approximately 28.73% of total variance.
+The resulting workplace-support representation contains 45 encoded features. K=2 produces silhouette 0.1021, Davies–Bouldin 2.8210 and mean pairwise ARI 1.0000. Consequently, the groups are interpreted as broad intervention-oriented contrasts rather than sharply separated natural employee types.
 
-Therefore, a PCA scatter plot is interpreted as a visual aid, not as proof of sharply separated natural populations.
+## 9. Profiling and diagnostics
 
-## 7. Workplace-support analysis
+Primary cluster profiling is reproduced from the canonical K-Means K=2 labels. The repository generates response-share differences for the key mental-health, disclosure, stigma and work-impact variables, together with cluster-level age summaries. These outputs underpin the case-study tables and differentiator figure.
 
-The secondary analysis is restricted to 1,146 non-self-employed respondents.
+## 10. Interpretation principles
 
-It focuses on current workplace support and stigma variables, including employer-provided mental-health benefits, awareness of available care, formal employer communication, educational resources, anonymity, medical leave, perceived disclosure consequences, coworker/supervisor comfort, employer seriousness toward mental health, and observed negative consequences.
+Clusters are not labelled as “healthy” versus “mentally ill”. Mental-health variables are interpreted as reported survey characteristics rather than clinical diagnoses. The analysis distinguishes statistical structure from organizational usefulness. A cluster can be mathematically stable while still having limited practical separation.
 
-Previous-employer variables, self-employment routing variables, employer-type classification, and completely missing variables are excluded from the final representation.
+## 11. Limitations
 
-The resulting workplace-support representation contains 45 encoded features.
-
-K=2 again provides the strongest tested internal solution, but the Silhouette Score is only approximately 0.102. Consequently, these groups are interpreted as broad intervention-oriented contrasts rather than sharply separated natural employee types.
-
-## 8. Interpretation principles
-
-Clusters are not labelled as “healthy” versus “mentally ill”.
-
-Mental-health variables are interpreted as reported survey characteristics rather than clinical diagnoses.
-
-The analysis distinguishes statistical structure from organizational usefulness. A cluster can be mathematically stable while still having limited practical separation.
-
-The results therefore support cautious segmentation and targeted organizational support, not individual clinical decisions.
-
-## 9. Limitations
-
-Important limitations include:
-
-- cross-sectional survey design;
-- self-reported responses;
-- possible selection and response bias;
-- structural missingness created by survey routing;
-- modest cluster separation;
-- sensitivity of unsupervised clustering to representation choices;
-- no causal interpretation;
-- no clinical validation;
-- PCA explains only part of the total variation in its first two dimensions.
-
-These limitations are incorporated into the final interpretation rather than hidden from the reader.
+Important limitations include cross-sectional survey design, self-reported responses, possible selection and response bias, structural missingness created by survey routing, modest cluster separation, sensitivity of unsupervised clustering to representation choices, no causal interpretation, no clinical validation, and the limited variance represented by two-dimensional PCA projections.

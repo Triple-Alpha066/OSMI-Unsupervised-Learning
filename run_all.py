@@ -13,4 +13,4 @@ def run(script):
 if __name__ == "__main__":
     run("run_primary_analysis.py")
     run("run_workplace_analysis.py")
-    print("\nAll OSMI analyses completed successfully.")
+    print("\nCanonical OSMI analyses completed successfully.")

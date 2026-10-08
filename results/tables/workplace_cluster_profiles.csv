@@ -1,0 +1,27 @@
+Variable,Cluster,N,Modal response,Modal share
+Does your employer provide mental health benefits as part of healthcare coverage?,1,670,Yes,0.3746268656716418
+Does your employer provide mental health benefits as part of healthcare coverage?,2,476,Yes,0.5882352941176471
+Do you know the options for mental health care available under your employer-provided coverage?,1,670,No,0.37910447761194027
+Do you know the options for mental health care available under your employer-provided coverage?,2,476,Yes,0.36764705882352944
+"Has your employer ever formally discussed mental health (for example, as part of a wellness campaign or other official communication)?",1,670,No,0.8477611940298507
+"Has your employer ever formally discussed mental health (for example, as part of a wellness campaign or other official communication)?",2,476,No,0.5147058823529411
+Does your employer offer resources to learn more about mental health concerns and options for seeking help?,1,670,No,0.5701492537313433
+Does your employer offer resources to learn more about mental health concerns and options for seeking help?,2,476,Yes,0.4054621848739496
+Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources provided by your employer?,1,670,I don't know,0.7582089552238805
+Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources provided by your employer?,2,476,I don't know,0.49159663865546216
+"If a mental health issue prompted you to request a medical leave from work, asking for that leave would be:",1,670,Somewhat difficult,0.2507462686567164
+"If a mental health issue prompted you to request a medical leave from work, asking for that leave would be:",2,476,Very easy,0.37184873949579833
+Do you think that discussing a mental health disorder with your employer would have negative consequences?,1,670,Maybe,0.5985074626865672
+Do you think that discussing a mental health disorder with your employer would have negative consequences?,2,476,No,0.7962184873949579
+Do you think that discussing a physical health issue with your employer would have negative consequences?,1,670,No,0.5835820895522388
+Do you think that discussing a physical health issue with your employer would have negative consequences?,2,476,No,0.9369747899159664
+Would you feel comfortable discussing a mental health disorder with your coworkers?,1,670,No,0.5283582089552239
+Would you feel comfortable discussing a mental health disorder with your coworkers?,2,476,Maybe,0.46218487394957986
+Would you feel comfortable discussing a mental health disorder with your direct supervisor(s)?,1,670,No,0.4835820895522388
+Would you feel comfortable discussing a mental health disorder with your direct supervisor(s)?,2,476,Yes,0.7710084033613446
+Do you feel that your employer takes mental health as seriously as physical health?,1,670,I don't know,0.5462686567164179
+Do you feel that your employer takes mental health as seriously as physical health?,2,476,Yes,0.6281512605042017
+Have you heard of or observed negative consequences for co-workers who have been open about mental health issues in your workplace?,1,670,No,0.891044776119403
+Have you heard of or observed negative consequences for co-workers who have been open about mental health issues in your workplace?,2,476,No,0.9474789915966386
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,1,670,No,0.3522388059701492
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,2,476,No,0.5357142857142857

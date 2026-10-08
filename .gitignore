@@ -3,5 +3,3 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 data/*.csv
-results/tables/*.csv
-results/figures/*.png

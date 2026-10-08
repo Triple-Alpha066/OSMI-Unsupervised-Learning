@@ -94,18 +94,22 @@ def compare_hierarchical(X, k_values=range(2, 9)):
 
 
 def hierarchical_on_pca(X, n_components=20, k_values=range(2, 9)):
-    """Evaluate Ward hierarchical clustering on a PCA representation."""
+    """Evaluate Ward hierarchical clustering on a PCA representation.
+
+    The Ward linkage tree is computed once and then cut at each requested k.
+    This avoids refitting the O(n^2) hierarchical model separately for every k.
+    """
     from sklearn.decomposition import PCA
-    from sklearn.preprocessing import StandardScaler
+    from scipy.cluster.hierarchy import linkage, fcluster
 
     pca = PCA(n_components=min(n_components, X.shape[1], X.shape[0]))
     Z = pca.fit_transform(X)
+    tree = linkage(Z, method="ward")
 
     rows = []
     labels_by_k = {}
     for k in k_values:
-        model = AgglomerativeClustering(n_clusters=k, linkage="ward")
-        labels = model.fit_predict(Z)
+        labels = fcluster(tree, t=k, criterion="maxclust") - 1
         sizes = np.bincount(labels)
         rows.append({
             "k": k,

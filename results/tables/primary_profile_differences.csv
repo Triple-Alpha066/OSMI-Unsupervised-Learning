@@ -1,0 +1,48 @@
+Variable,Response,Cluster 1 share,Cluster 2 share,Absolute difference
+Have you been diagnosed with a mental health condition by a medical professional?,No,0.10532994923857868,0.9829457364341085,0.8776157871955299
+Have you been diagnosed with a mental health condition by a medical professional?,Yes,0.8946700507614214,0.017054263565891473,0.8776157871955299
+Have you had a mental health disorder in the past?,Yes,0.8705583756345178,0.07751937984496124,0.7930389957895565
+Have you ever sought treatment for a mental health issue from a mental health professional?,0,0.06218274111675127,0.8449612403100775,0.7827784991933262
+Have you ever sought treatment for a mental health issue from a mental health professional?,1,0.9378172588832487,0.15503875968992248,0.7827784991933262
+"If you have a mental health issue, do you feel that it interferes with your work when being treated effectively?",Not applicable to me,0.046954314720812185,0.8062015503875969,0.7592472356667848
+"If you have a mental health issue, do you feel that it interferes with your work when NOT being treated effectively?",Not applicable to me,0.025380710659898477,0.6945736434108527,0.6691929327509543
+Do you currently have a mental health disorder?,Yes,0.700507614213198,0.03565891472868217,0.6648486994845157
+Have you had a mental health disorder in the past?,No,0.03553299492385787,0.6558139534883721,0.6202809585645143
+Do you currently have a mental health disorder?,No,0.10406091370558376,0.6961240310077519,0.5920631173021681
+"If you have a mental health issue, do you feel that it interferes with your work when NOT being treated effectively?",Often,0.6218274111675127,0.07441860465116279,0.5474088065163499
+Do you have a family history of mental illness?,Yes,0.6624365482233503,0.22945736434108527,0.43297918388226503
+Do you have a family history of mental illness?,No,0.16370558375634517,0.5565891472868217,0.3928835635304766
+"If you have a mental health issue, do you feel that it interferes with your work when being treated effectively?",Sometimes,0.40482233502538073,0.07751937984496124,0.3273029551804195
+"If you have a mental health issue, do you feel that it interferes with your work when being treated effectively?",Rarely,0.3604060913705584,0.05891472868217054,0.30149136268838783
+Would you bring up a mental health issue with a potential employer in an interview?,No,0.6941624365482234,0.5209302325581395,0.17323220399008388
+Have you had a mental health disorder in the past?,Maybe,0.09390862944162437,0.26666666666666666,0.1727580372250423
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,"Yes, I experienced",0.1916243654822335,0.024806201550387597,0.1668181639318459
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,No,0.3248730964467005,0.4821705426356589,0.1572974461889584
+How willing would you be to share with friends and family that you have a mental illness?,Not applicable to me (I do not have a mental illness),0.01015228426395939,0.16124031007751938,0.15108802581355998
+Do you feel that being identified as a person with a mental health issue would hurt your career?,Maybe,0.34390862944162437,0.49147286821705427,0.1475642387754299
+Would you bring up a mental health issue with a potential employer in an interview?,Maybe,0.24492385786802032,0.3798449612403101,0.13492110337228977
+"If you have a mental health issue, do you feel that it interferes with your work when NOT being treated effectively?",Sometimes,0.3096446700507614,0.18449612403100776,0.12514854601975364
+How willing would you be to share with friends and family that you have a mental illness?,Very open,0.2296954314720812,0.10852713178294573,0.12116829968913548
+Do you feel that being identified as a person with a mental health issue would hurt your career?,"Yes, it has",0.11802030456852793,0.018604651162790697,0.09941565340573723
+Do you think that team members/co-workers would view you more negatively if they knew you suffered from a mental health issue?,"No, I don't think they would",0.2068527918781726,0.2868217054263566,0.079968913548184
+How willing would you be to share with friends and family that you have a mental illness?,Somewhat open,0.48096446700507617,0.4046511627906977,0.07631330421437849
+Do you currently have a mental health disorder?,Maybe,0.19543147208121828,0.2682170542635659,0.07278558218234762
+"If you have a mental health issue, do you feel that it interferes with your work when being treated effectively?",Never,0.11548223350253807,0.04496124031007752,0.07052099319246055
+Do you think that team members/co-workers would view you more negatively if they knew you suffered from a mental health issue?,Maybe,0.3819796954314721,0.4496124031007752,0.06763270766930313
+Do you think that team members/co-workers would view you more negatively if they knew you suffered from a mental health issue?,"Yes, I think they would",0.31091370558375636,0.24496124031007752,0.06595246527367885
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,Missing/Not reported,0.03426395939086294,0.09612403100775194,0.061860071616888994
+"If you have a mental health issue, do you feel that it interferes with your work when being treated effectively?",Often,0.07233502538071065,0.012403100775193798,0.059931924605516856
+Do you think that team members/co-workers would view you more negatively if they knew you suffered from a mental health issue?,"No, they do not",0.0532994923857868,0.010852713178294573,0.04244677920749223
+Do you have a family history of mental illness?,I don't know,0.17385786802030456,0.21395348837209302,0.04009562035178846
+Do you think that team members/co-workers would view you more negatively if they knew you suffered from a mental health issue?,"Yes, they do",0.046954314720812185,0.007751937984496124,0.03920237673631606
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,"Yes, I observed",0.2017766497461929,0.16279069767441862,0.03898595207177427
+Would you bring up a mental health issue with a potential employer in an interview?,Yes,0.06091370558375635,0.09922480620155039,0.03831110061779404
+Do you feel that being identified as a person with a mental health issue would hurt your career?,"No, it has not",0.03553299492385787,0.0031007751937984496,0.03243221973005942
+Do you feel that being identified as a person with a mental health issue would hurt your career?,"Yes, I think it would",0.4073604060913706,0.3751937984496124,0.03216660764175816
+How willing would you be to share with friends and family that you have a mental illness?,Neutral,0.0850253807106599,0.11472868217054263,0.02970330145988273
+Do you feel that being identified as a person with a mental health issue would hurt your career?,"No, I don't think it would",0.09517766497461928,0.11162790697674418,0.0164502420021249
+Have you observed or experienced an unsupportive or badly handled response to a mental health issue in your current or previous workplace?,Maybe/Not sure,0.24746192893401014,0.23410852713178296,0.013353401802227188
+How willing would you be to share with friends and family that you have a mental illness?,Somewhat not open,0.1434010152284264,0.15658914728682172,0.013188132058395308
+"If you have a mental health issue, do you feel that it interferes with your work when NOT being treated effectively?",Never,0.006345177664974619,0.010852713178294573,0.004507535513319954
+How willing would you be to share with friends and family that you have a mental illness?,Not open at all,0.050761421319796954,0.05426356589147287,0.0035021445716759136
+"If you have a mental health issue, do you feel that it interferes with your work when NOT being treated effectively?",Rarely,0.03680203045685279,0.03565891472868217,0.0011431157281706211
